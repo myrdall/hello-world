@@ -8,34 +8,25 @@
 
      int days, income, dep_amount, percent, percent_amount;
 
-     cout << "Введите сумму вклада ";
-     cin >>dep_amount; 
-
     while (dep_amount < 1000)
     {   
         cout << "Минимальная сумма вклада состовляет 1000 рублей \n";
-        cout << "Введите сумму вклада ";
+        cout << "Введите сумму вклада:  \n";
         cin >>dep_amount;     
-
     }
-
-     cout << "Введите срок вклада ";
-     cin >>days;
-
-     if (days > 365)
-     {
-        cout << "Срок вклада не может быть более 365 дней";
-     }
-
+    while(days > 365){
+        cout << "Срок вклада не может быть более 365 дней\n";
+        cout << "Введите срок вклада: \n";
+        cin >>days;
+    }
+     
      if (days <= 30){
 
          percent = 10;
 
          percent_amount = dep_amount * percent / 100;
 
-         income = dep_amount - percent_amount;
-
-         
+         income = dep_amount - percent_amount;   
      } 
 
     if (days > 30 && days <= 120 ){
@@ -56,8 +47,15 @@
          income = dep_amount + percent_amount;
     }
 
-    
-     
+    if (days > 240 && days <= 365 ){
+
+         percent = 12;
+
+         percent_amount = dep_amount * percent / 100;
+
+         income = dep_amount + percent_amount;
+    }
+
 
      cout <<"Cумма вклада на окончание срока: "<< income << " руб.";
 
